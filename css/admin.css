@@ -1,0 +1,33 @@
+.bg-editable{
+  background: linear-gradient(#efe,#cfc);
+  cursor: pointer;
+  transition: .3s;
+}
+.bg-editable:hover{
+  letter-spacing: .5px;
+}
+
+.text-disabled{
+  color: gray !important;
+  font-style: italic;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .admin-header {
+    margin-top: 80px;
+  }
+
+  .logo {
+    width: 28vw;
+  }
+}
+
+/* ============================================== */
+/* PANDUAN */
+/* ============================================== */
+.row-panduan{
+  background: linear-gradient(white,rgb(158, 255, 255));
+  margin: -15px -15px 0 -15px;
+  padding: 15px 15px 35px 15px;
+}

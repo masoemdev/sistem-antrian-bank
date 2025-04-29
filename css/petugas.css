@@ -1,0 +1,106 @@
+.petugas {
+  background-color: #f8f9fa;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+}
+
+.logo {
+  width: 40vw;
+  max-width: 200px;
+}
+
+.role-label {
+  position: absolute;
+  top: 5vh;
+  left: 35vw;
+  right: 35vw;
+  font-size: 25px;
+  text-align: center;
+  background: #eef;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  color: darkblue;
+}
+
+.form-next-antrian {
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+
+}
+
+.btn-next-antrian {
+  height: 20vh;
+  font-size: 30px;
+}
+
+.btn-img {
+  display: inline;
+  height: 30px;
+}
+
+.span-next-antrian {
+  display: inline-block;
+}
+
+.antrian-saat-ini {
+  position: absolute;
+  top: 21vh;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+}
+
+.antrian-saat-ini-nomor {
+  position: absolute;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  transform: translateY(-7vh);
+  font-size: 120px;
+}
+
+/* ====================================== */
+/* SAAT SMARTPHONE BERDIRI */
+/* ====================================== */
+@media (max-width:500px) {
+  .role-label {
+    left: 20vw;
+    right: 20vw;
+    top: 20vh;
+    font-size: 35px;
+  }
+
+  .btn-img {
+    display: inline-block;
+    margin-top: 10px;
+    height: 100px;
+  }
+
+  .span-next-antrian {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .antrian-saat-ini {
+    top: 37vh;
+  }
+
+  .antrian-saat-ini-nomor {
+    top: 40vh;
+    transform: translateY(1vh);
+  }
+
+  .btn-next-antrian {
+    height: 27vh;
+  }
+
+  .btn-info{
+    margin: 10px 0;
+    color: gray;
+  }
+
+}

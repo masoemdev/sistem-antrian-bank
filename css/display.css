@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.sedang-dipanggil-header {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  right: 0;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+
+.row-display {
+  border: solid 1px white;
+}
+
+.jenis-antrian {
+  font-size: 80px;
+}
+
+.blok-displays {
+  position: absolute;
+  top: 20vh;
+  height: 70vh;
+  left: 0;
+  right: 0;
+  padding: 0 25px;
+}
+
+.display {
+  font-size: 120px;
+  letter-spacing: 15px;
+}
+
+.display-A {
+  color: #00ff88;
+}
+
+.display-B {
+  color: rgb(3, 255, 234);
+}
+
+.display-C {
+  color: rgb(225, 255, 0);
+}
+
+.total-antrian{
+  position: fixed;
+  bottom: 20px;
+  left:0;
+  right: 0;
+}
