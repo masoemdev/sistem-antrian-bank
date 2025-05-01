@@ -1,9 +1,23 @@
 body {
-  background-color: black;
-  color: white;
+  /* background-color: black;
+  color: white; */
   font-weight: bold;
 }
 
+.bg-teller{
+  background: #04048A;
+  color: white;
+}
+
+.bg-cs{
+  background: #2C9FFA;
+  color: white;
+}
+
+.bg-rahn{
+  background: #FEF200;
+  color: black;
+}
 
 
 .sedang-dipanggil-header {
@@ -37,7 +51,7 @@ body {
   letter-spacing: 15px;
 }
 
-.display-A {
+/* .display-A {
   color: #00ff88;
 }
 
@@ -47,7 +61,7 @@ body {
 
 .display-C {
   color: rgb(225, 255, 0);
-}
+} */
 
 .total-antrian{
   position: fixed;

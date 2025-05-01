@@ -18,7 +18,7 @@ if (isset($_POST['btn_next_antrian'])) {
     WHERE id = $id_sedang_dilayani
     ";
     $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
-    alert("Update akhir layanan sebelumnya sukses.", 'success');
+    // alert("Update akhir layanan sebelumnya sukses.", 'success');
   }
 
 
@@ -33,11 +33,12 @@ if (isset($_POST['btn_next_antrian'])) {
     WHERE id = $id_next_sisa
     ";
     $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
-    alert("Update awal layanan antrian baru sukses.", 'success');
+    // alert("Update awal layanan antrian baru sukses.", 'success');
   } else {
-    alert("Saat ini belum ada Nasabah baru untuk Petugas $user[jenis_role].", 'info');
+    // alert("Saat ini belum ada Nasabah baru untuk Petugas $user[jenis_role].", 'info');
   }
-  echo "<div class=p-2><a class='btn btn-primary w-100' href='?'>Back to Home</a>";
-  jsurl('', 5000);
+  // echo "<div class=p-2><a class='btn btn-primary w-100' href='?'>Back to Home</a>";
+  // jsurl('', 5000);
+  jsurl();
   echo '</div>';
 }

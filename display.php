@@ -16,8 +16,10 @@ foreach ($rjenis_antrian as $kode => $d) {
     $kode_nomor = "----";
   }
 
+  $bg = strtolower("bg-$d[singkatan]");
+
   $displays .= "
-    <div class='row-display'>
+    <div class='row-display $bg'>
       <div class='row'>
         <div class=col-6>
           <div class='d-flex justify-content-center align-items-center h-100'>
