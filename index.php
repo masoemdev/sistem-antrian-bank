@@ -60,7 +60,7 @@ $p = $p ?? stop('undefined content of index.');
 
 <body>
   <?php
-  $target =  "$p.php";
+  $target =  strtolower("$p.php");
   if (file_exists($target)) {
     echo '<script src="js/jquery-3.7.1.min.js"></script>';
     include $target;
