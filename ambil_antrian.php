@@ -61,6 +61,6 @@ $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
   </div>
 </div>
 <script>
-  setTimeout(() => $('.kembali').fadeIn(3000), 8000);
-  setTimeout(() => location.replace('?'), 16000);
+  setTimeout(() => $('.kembali').fadeIn(3000), 5000);
+  setTimeout(() => location.replace('?'), 10000);
 </script>
