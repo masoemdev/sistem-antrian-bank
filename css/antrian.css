@@ -22,7 +22,7 @@ a{
 
 .logo {
   position: absolute;
-  z-index: 100;
+  z-index: 3;
   top: 20px;
   left: 20px;
   width: 200px;
@@ -92,4 +92,13 @@ a{
 
 .dilarang{
   cursor: not-allowed;
+}
+
+.bg-editable{
+  background: linear-gradient(#efe,#cfc);
+  cursor: pointer;
+  transition: .3s;
+}
+.bg-editable:hover{
+  letter-spacing: .5px;
 }

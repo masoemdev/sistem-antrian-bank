@@ -10,7 +10,7 @@ if (isset($_POST['btn_logout'])) {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 101;
+    z-index: 3;
     display: flex;
     gap: 15px;
   }
@@ -28,6 +28,8 @@ if (isset($_POST['btn_logout'])) {
     font-size: 20px;
     text-align: right;
     /* background: red; */
+    /* border: solid 1px pink; */
+    cursor: pointer;
   }
 
   @media (max-width:600px) {

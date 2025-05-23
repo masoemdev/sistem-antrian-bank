@@ -68,12 +68,14 @@ $p = $p ?? stop('undefined content of index.');
 
 <body>
   <?php
+  echo "<span class=hideit id=username>$username</span>";
   $target =  strtolower("$p.php");
   if (file_exists($target)) {
     echo '<script src="js/jquery-3.7.1.min.js"></script>';
     include $target;
     if ($username) {
       include 'logout.php';
+      include 'my_profile.php';
     }
   } else {
     stop("Fitur [ $p ] belum ada.");

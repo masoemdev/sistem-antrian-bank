@@ -8,8 +8,8 @@ if (isset($_POST['btn_login'])) {
     $s = "SELECT kode_role,status FROM tb_user 
     WHERE 1
     AND username = '$username' 
-    AND password = md5('$password') 
-    -- AND status = 1
+    AND (password = md5('$password') OR password is null) 
+    -- AND status = 1 -- untuk status akan diproses kemudian
     ";
     $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
     if (!mysqli_num_rows($q)) {

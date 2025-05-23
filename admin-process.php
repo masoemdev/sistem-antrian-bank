@@ -52,6 +52,12 @@ if (isset($_POST) and $_POST) {
     jsurl();
   } elseif (isset($_POST['btn_logout'])) {
     // do nothing
+  } elseif (isset($_POST['btn_ubah_password'])) {
+    // sudah ada handler
+  } elseif (isset($_POST['btn_reset_password'])) {
+    $s = "UPDATE tb_user SET password=null WHERE username='$_POST[btn_reset_password]'";
+    $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
+    jsurl();
   } else {
 
     echo '<pre>';

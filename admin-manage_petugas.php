@@ -43,6 +43,13 @@ while ($d = mysqli_fetch_assoc($q)) {
   if (!$d['nama_role']) { // tidak bisa hapus akun admin
     $td_username = "<td class='dilarang' onclick='alert(`Tidak bisa mengubah username admin. Hubungi developer untuk customisasi.`)'>$d[username]</td>";
     $btn_delete = '-';
+    $btn_reset = "<span class='btn btn-sm btn-secondary' onclick='alert(`Admin tidak bisa mereset password sendiri. Silahkan ubah password via My Profile.`)'>Reset</span>";
+  } else {
+    if ($d['password']) {
+      $btn_reset = "<button class='btn btn-sm btn-danger' value=$d[username] name=btn_reset_password onclick='return confirm(`Confirm Reset?\n\n\nYakin untuk melakukan reset password untuk username yang ini? Reset Password menyebabkan password sama dengan username.`)'>Reset</button>";
+    } else {
+      $btn_reset = "<span class='btn btn-sm btn-secondary' onclick='alert(`Password user ini sama dengan username.`)'>Reset</span>";
+    }
   }
 
   $tr .= "
@@ -57,6 +64,7 @@ while ($d = mysqli_fetch_assoc($q)) {
       <td class='bg-editable' id=tb_user--nama--username--$d[username]>$nama</td>
       <td>$nama_role</td>
       <td>$btn</td>
+      <td>$btn_reset</td>
     </tr>
   ";
 }
@@ -71,6 +79,7 @@ while ($d = mysqli_fetch_assoc($q)) {
     <th>Nama</th>
     <th>Role</th>
     <th>Status</th>
+    <th>Password</th>
   </thead>
   <?= $tr ?>
 </table>

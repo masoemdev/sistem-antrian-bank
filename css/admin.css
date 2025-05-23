@@ -1,12 +1,3 @@
-.bg-editable{
-  background: linear-gradient(#efe,#cfc);
-  cursor: pointer;
-  transition: .3s;
-}
-.bg-editable:hover{
-  letter-spacing: .5px;
-}
-
 .text-disabled{
   color: gray !important;
   font-style: italic;
