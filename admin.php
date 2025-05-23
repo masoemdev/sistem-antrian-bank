@@ -1,8 +1,6 @@
 <?php
 include 'includes/img_icon.php';
 include 'admin-process.php';
-
-
 ?>
 <link rel="stylesheet" href="css/admin.css">
 <form method=post class="admin">

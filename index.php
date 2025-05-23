@@ -13,17 +13,26 @@ $aktif = '<span class=text-success>Aktif</span>';
 $non_aktif = '<i class=text-danger>non-aktif</i>';
 $onclick_ondev = "onclick='alert(`Fitur ini belum diimplementasikan.\n\nInfo lebih lanjut silahkan hubungi Developer.`)'";
 
+$param = null;
+foreach ($_GET as $key => $value) {
+  $param = $key;
+  break;
+}
 
-$p = $_GET['p'] ?? null;
+$p = $_GET['p'] ?? $param;
 $username = $_SESSION['antrian_username'] ?? null;
 $role = $_SESSION['antrian_kode_role'] ?? null;
 
 if ($username) {
   if (key_exists($role, $rjenis_antrian) == 1 || $role == 'ADMIN') {
     include 'user.php';
-    $p = $role;
-    if ($role != 'ADMIN') { // kode Petugas A, B, C
-      $p = 'petugas';
+    if ($p == 'export_csv') {
+      // param tetap
+    } else {
+      $p = $role; // ganti param dengan ADMIN
+      if ($role != 'ADMIN') { // kode Petugas A, B, C
+        $p = 'petugas';
+      }
     }
   } else {
     $user = [];
@@ -37,7 +46,6 @@ if ($role == 'nasabah' || $role == 'display') {
   $p = $p ?? $role;
 }
 $p = $p ?? stop('undefined content of index.');
-
 
 // 1. jenis antrian
 // 2.  disable antrian
