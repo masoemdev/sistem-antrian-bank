@@ -75,7 +75,10 @@ $p = $p ?? stop('undefined content of index.');
     include $target;
     if ($username) {
       include 'logout.php';
-      include 'my_profile.php';
+
+      if (!($username == 'display' || $username == 'nasabah')) {
+        include 'my_profile.php';
+      }
     }
   } else {
     stop("Fitur [ $p ] belum ada.");
