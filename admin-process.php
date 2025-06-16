@@ -39,10 +39,10 @@ if (isset($_POST) and $_POST) {
     ) VALUES (
       '$new_user',
       '$new_nama',
-      '$_POST[btn_tambah_petugas]',
+      '$kode',
       '$username'
     ) ON DUPLICATE KEY UPDATE 
-      username = username
+      created_at = NOW()
     ";
     $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
     jsurl();
