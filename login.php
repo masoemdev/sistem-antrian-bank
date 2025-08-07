@@ -44,13 +44,12 @@ $username_value = $_GET['username'] ?? $username_value;
     justify-content: center;
     /* flex-direction: column; */
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
   }
-
 
   .form-login {
     font-size: 30px;
-    background: linear-gradient(#efe, #cfc);
+    background: linear-gradient(#F5F5F5, #ADD8E6);
     max-width: 800px;
     min-width: 40vw;
     margin: 0 15px;

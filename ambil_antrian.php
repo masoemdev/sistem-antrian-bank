@@ -27,7 +27,7 @@ $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* gap: 50px; */
+    /* gap: 50px;*/
     height: 100vh;
   }
 
@@ -36,7 +36,7 @@ $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
   }
 
   .sedang-mencetak {
-    margin: 30px 0 50px 0;
+    margin: 20px 0 20px 0;
   }
 
   .kembali {
@@ -50,19 +50,19 @@ $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
 </style>
 <div class="blok-sedang-print text-center">
   <div class="blok-mohon">
-    <div class="perintah">Mohon Tunggu !</div>
+    <div class="perintah">Mohon Tunggu</div>
     <div class="sedang-mencetak">
-      Sedang mencetak Antrian Anda...
+      Sedang mencetak Antrian Anda.
     </div>
     <div>
       <img src="img/loading.gif" alt="loading">
     </div>
   </div>
   <div class="kembali">
-    <a href="?">Kembali</a>
+    <a href="/">Kembali</a>
   </div>
 </div>
 <script>
-  setTimeout(() => $('.kembali').fadeIn(3000), 5000);
-  setTimeout(() => location.replace('?'), 10000);
+  setTimeout(() => $('.kembali').fadeIn(3000), 3000);
+  setTimeout(() => location.replace('/'), 5000);
 </script>

@@ -45,7 +45,7 @@ if (isset($_POST['btn_logout'])) {
   <div class="nama-user"><?= $user['nama'] ?></div>
   <div>
     <button name="btn_logout" onclick="return confirm(`Logout?`)">
-      <img src="img/logout.png" alt="logout">
+      <img src="img/logout.png" alt="logout" width="30" height="30" >
     </button>
 
   </div>

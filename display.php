@@ -3,8 +3,8 @@ $displays = '';
 $marquess = '';
 foreach ($rjenis_antrian as $kode => $d) {
   if ($d['status'] != 1) continue;
-  $s = "SELECT a.nomor FROM tb_antrian a 
-  WHERE waktu >= '$today' 
+  $s = "SELECT a.nomor FROM tb_antrian a
+  WHERE waktu >= '$today'
   AND kode_jenis = '$kode'
   AND (status = 1 OR status = 2) -- sedang dilayani | sudah dilayani
   ORDER BY waktu DESC LIMIT 1 ";
@@ -15,9 +15,7 @@ foreach ($rjenis_antrian as $kode => $d) {
   } else {
     $kode_nomor = "----";
   }
-
   $bg = strtolower("bg-$d[singkatan]");
-
   $displays .= "
     <div class='row-display $bg'>
       <div class='row'>
@@ -39,8 +37,6 @@ foreach ($rjenis_antrian as $kode => $d) {
 # ============================================================
 $jenis_antrian = 'terlayani'; // custom parameter pada total_antrian.php
 include 'total_antrian.php';
-
-
 ?>
 <link rel="stylesheet" href="css/display.css">
 <span id="nama-page" class="nama-page">display</span>
@@ -55,7 +51,5 @@ include 'total_antrian.php';
     </div>
     <?php include 'marquee.php'; ?>
   </div>
-
 </div>
-
 <script src="js/update_counts.js"></script>

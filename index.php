@@ -48,9 +48,9 @@ if ($role == 'nasabah' || $role == 'display') {
 $p = $p ?? stop('undefined content of index.');
 
 // 1. jenis antrian
-// 2.  disable antrian
+// 2. disable antrian
 // 3. dashboard (report2)
-// 4. Branding MU 
+// 4. Branding MU
 // 5. Running Text (nanti sambil jalan)
 
 ?>

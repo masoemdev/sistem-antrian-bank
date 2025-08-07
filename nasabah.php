@@ -59,7 +59,7 @@ foreach ($rjenis_antrian as $kode => $d) {
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   ";
 }
 
@@ -77,8 +77,8 @@ foreach ($rjenis_antrian as $kode => $d) {
 
   .blok-nomor-antrian {
     position: absolute;
-    top: 30vh;
-    height: 65vh;
+    top: 32vh;
+    height: 50vh;
     left: 0;
     right: 0;
   }
@@ -88,8 +88,8 @@ foreach ($rjenis_antrian as $kode => $d) {
   }
 
   .antrian-show {
-    font-size: 95px;
-    height: 170px;
+    font-size: 90px;
+    height: 150px;
   }
 
   .btn-ambil-antrian {
@@ -97,7 +97,7 @@ foreach ($rjenis_antrian as $kode => $d) {
   }
 
   .btn-img-hand {
-    width: 80px;
+    width: 40px;
   }
 
   .bg-debug {
@@ -105,12 +105,11 @@ foreach ($rjenis_antrian as $kode => $d) {
   }
 </style>
 <div class="blok-nasabah text-center">
-  <img src="img/logo.png" alt="logo" class="logo" />
-  <h1 class="selamat-datang">Selamat Datang Nasabah!</h1>
-  <div class="nomor-antrian-label">Silahkan Ambil Antrian!</div>
+  <img src="img/logo.png" alt="logo" class="logo" /> 
+<h1 class="nomor-antrian-label">Silahkan Ambil Antrian</h1>
   <div class="blok-nomor-antrian">
-    <div class="px-4 h-100">
-      <div class="row h-100">
+    <div class="px-4 h-80">
+      <div class="row h-80">
         <?= $cols ?>
       </div>
     </div>
