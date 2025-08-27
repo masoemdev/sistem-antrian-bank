@@ -47,11 +47,11 @@ if (!mysqli_num_rows($q)) {
 # ============================================================
 if (!$rsisa) {
   // $disabled = 'disabled'; // harus bisa di klik untuk update akhir layanan
-  $info = 'belum ada antrian selanjutnya';
+  $info = 'Belum Ada Antrian Selanjutnya';
   $disabled = '';
 } else {
   $disabled = '';
-  $info = "terdapat $rsisa_count sisa antrian $user[jenis_role]";
+  $info = "Terdapat $rsisa_count Sisa Antrian $user[jenis_role]";
 }
 
 # ============================================================
@@ -70,40 +70,33 @@ if ($antrian_sedang['id']) {
   $disabled_skip = 'disabled';
 }
 
-
 $nomor_show = $antrian_sedang['nomor'] ? sprintf('%03d', $antrian_sedang['nomor']) : '---';
 $nomor_show = "$user[kode_role]$nomor_show";
 ?>
 <link rel="stylesheet" href="css/petugas.css">
 <div class="petugas ">
-  <img src="img/logo.png" alt="logo" class="logo" />
-  <div class="role-label">ANTRIAN <?= $user['jenis_role'] ?></div>
-  <div class="antrian-saat-ini">Saat Ini</div>
-  <div class="antrian-saat-ini-nomor"><?= $nomor_show ?></div>
-  <form method=post class="form-next-antrian">
-    <div class="row">
-      <div class="col-6">
-        <button
-          name=btn_next_antrian
-          value="<?= $btn_value ?>---1"
-          class="btn-next-antrian btn btn-danger w-100"
-          <?= $disabled_skip ?>
-          onclick="return confirm(`Skip Antrian?`)">
-          <span class="span-next-antrian">Skip Antrian</span>
-        </button>
-      </div>
-      <div class="col-6">
-        <button
-          name=btn_next_antrian
-          value="<?= $btn_value ?>--2"
-          class="btn-next-antrian btn btn-primary w-100"
-          <?= $disabled ?>>
-          <span class="span-next-antrian">Next Antrian</span>
-        </button>
-      </div>
-    </div>
-    <div class="btn-info abu"><?= $info ?></div>
-  </form>
+    <img src="img/logo.png" alt="logo" class="logo" />
+    <div class="role-label">ANTRIAN <?= $user['jenis_role'] ?></div>
+    <div class="antrian-saat-ini">Antrian Saat Ini</div>
+    <div class="antrian-saat-ini-nomor"><?= $nomor_show ?></div>
+    <form method=post class="form-next-antrian">
+        <div class="row">
+            <div class="col-6">
+                <button name=btn_next_antrian value="<?= $btn_value ?>---1"
+                    class="btn-next-antrian btn btn-danger w-100" <?= $disabled_skip ?>
+                    onclick="return confirm(`Skip Antrian?`)">
+                    <span class="span-next-antrian">Skip Antrian</span>
+                </button>
+            </div>
+            <div class="col-6">
+                <button name=btn_next_antrian value="<?= $btn_value ?>--2"
+                    class="btn-next-antrian btn btn-primary w-100" <?= $disabled ?>>
+                    <span class="span-next-antrian">Next Antrian</span>
+                </button>
+            </div>
+        </div>
+        <div class="btn-info abu"><?= $info ?></div>
+    </form>
 
 </div>
 

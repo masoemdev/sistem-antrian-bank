@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -12,11 +12,11 @@ body {
   gap: 15px;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.nama-page{
+.nama-page {
   display: none;
 }
 
@@ -28,11 +28,9 @@ a{
   width: 200px;
 }
 
-.selamat-datang{
-  margin-top:2rem
+.selamat-datang {
+  margin-top: 2rem
 }
-
-
 
 .nomor-antrian {
   font-size: 30vh;
@@ -41,7 +39,7 @@ a{
   align-items: center;
   position: absolute;
   z-index: 1;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -66,39 +64,41 @@ a{
   height: 7rem;
 }
 
-
-.perintah,.rekomendasi{
+.perintah,
+.rekomendasi {
   color: #007bff;
 }
 
-.proper{
+.proper {
   text-transform: capitalize;
 }
 
-.lower{
+.lower {
   text-transform: lowercase;
 }
-.upper{
+
+.upper {
   text-transform: uppercase;
 }
 
-.hover{
+.hover {
   cursor: pointer;
 }
 
-.bg-debug{
+.bg-debug {
   background: yellow !important;
 }
 
-.dilarang{
+.dilarang {
   cursor: not-allowed;
 }
 
-.bg-editable{
-  background: linear-gradient(#efe,#cfc);
+.bg-editable {
+  background: linear-gradient(#efe, #cfc);
   cursor: pointer;
   transition: .3s;
 }
-.bg-editable:hover{
+
+.bg-editable:hover {
   letter-spacing: .5px;
 }

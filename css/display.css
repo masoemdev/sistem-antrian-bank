@@ -2,21 +2,20 @@ body {
   font-weight: bold;
 }
 
-.bg-teller{
+.bg-teller {
   background: #04048A;
   color: white;
 }
 
-.bg-cs{
+.bg-cs {
   background: #2C9FFA;
   color: white;
 }
 
-.bg-rahn{
+.bg-rahn {
   background: #FEF200;
   color: black;
 }
-
 
 .sedang-dipanggil-header {
   position: absolute;
@@ -61,9 +60,9 @@ body {
   color: rgb(225, 255, 0);
 } */
 
-.total-antrian{
+.total-antrian {
   position: fixed;
   bottom: 20px;
-  left:0;
+  left: 0;
   right: 0;
 }

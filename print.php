@@ -1,9 +1,9 @@
 <style>
-  body {
+body {
     background: black;
-  }
+}
 
-  .kertas-thermal {
+.kertas-thermal {
     text-align: center;
     font-family: consolas, "Courier New", Courier, monospace;
     font-size: 12px;
@@ -11,30 +11,30 @@
     color: black;
     width: 57.5mm;
     height: 65mm;
-  }
+}
 
-  .nomor-antrian-print-label {
+.nomor-antrian-print-label {
     margin-top: 10px;
     font-size: 20px;
-  }
+}
 
-  .nomor-antrian-print {
+.nomor-antrian-print {
     font-size: 60px;
     transform: translateY(-13px);
-  }
+}
 
-  .antrian-saat-ini {
+.antrian-saat-ini {
     font-size: 20px;
-  }
+}
 
-  .estimasi {
+.estimasi {
     font-size: 15px;
-  }
+}
 
-  .slogan {
+.slogan {
     margin-top: 10px;
     font-size: 15px;
-  }
+}
 </style>
 
 <?php
@@ -119,31 +119,32 @@ if ($num_rows) {
 ?>
 
 <div class="kertas-thermal">
-  <h1 class="nomor-antrian-print-label">Antrian Anda</h1>
-  <div class="nomor-antrian-print"><?= $antrian_print_show ?></div>
-  <div class="antrian-saat-ini">antrian skg:
-    <?= $antrian_sedang_show ?>
-  </div>
-  <div class="estimasi">est. <?= $estimasi ?> menit menunggu</div>
-  <div class="slogan">
-    BPRS Al-Ma'soem <br />Meraih Sukses Bersama <br />Kemaslahatan Ummat
-  </div>
+    <h1 class="nomor-antrian-print-label">Antrian Anda</h1>
+    <div class="nomor-antrian-print"><?= $antrian_print_show ?></div>
+    <div class="antrian-saat-ini">Antrian Sekarang:
+        <?= $antrian_sedang_show ?>
+    </div>
+    <div class="estimasi">Estimasi <?= $estimasi ?> Menit Menunggu</div>
+    <div class="slogan">
+        PT. BPRS ALMASOEM <br />Meraih Sukses Bersama <br />Kemaslahatan Ummat
+    </div>
 </div>
 
 <?php if (!$firstLoad) { ?>
-  <script>
-    window.onload = () => {
-      // Tunggu sebentar untuk pastikan halaman benar-benar siap
-      setTimeout(() => {
+<script>
+window.onload = () => {
+    // Tunggu sebentar untuk pastikan halaman benar-benar siap
+    setTimeout(() => {
         window.print();
-      }, 500); // 0.5 detik delay supaya teks termuat dulu
-    };
-  </script>
+    }, 500); // 0.5 detik delay supaya teks termuat dulu
+};
+</script>
 <?php } ?>
 
 <?php if ($is_live) { ?>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <?php } else { ?>
-  <script src="../assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+<script src="../assets/vendor/jquery/jquery-3.7.1.min.js"></script>
 <?php } ?>
 <script src="js/update_counts.js"></script>

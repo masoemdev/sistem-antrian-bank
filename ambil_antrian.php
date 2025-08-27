@@ -21,7 +21,7 @@ $s = "INSERT INTO tb_antrian (nomor,kode_jenis) VALUES ('$nomor_baru','$kode_jen
 $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
 ?>
 <style>
-  .blok-sedang-print {
+.blok-sedang-print {
     font-size: 60px;
     display: flex;
     align-items: center;
@@ -29,40 +29,40 @@ $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
     flex-direction: column;
     /* gap: 50px;*/
     height: 100vh;
-  }
+}
 
-  .blok-mohon {
+.blok-mohon {
     transform: translateY(-5vh);
-  }
+}
 
-  .sedang-mencetak {
+.sedang-mencetak {
     margin: 20px 0 20px 0;
-  }
+}
 
-  .kembali {
+.kembali {
     display: none;
     position: absolute;
     bottom: 50px;
     left: 0;
     right: 0;
 
-  }
+}
 </style>
 <div class="blok-sedang-print text-center">
-  <div class="blok-mohon">
-    <div class="perintah">Mohon Tunggu</div>
-    <div class="sedang-mencetak">
-      Sedang mencetak Antrian Anda.
+    <div class="blok-mohon">
+        <div class="perintah">Mohon Tunggu</div>
+        <div class="sedang-mencetak">
+            Sedang Mencetak Antrian Anda.
+        </div>
+        <div>
+	<img src="img/loading.gif" alt="loading">
+        </div>
     </div>
-    <div>
-      <img src="img/loading.gif" alt="loading">
+    <div class="kembali">
+        <a href="/">Kembali</a>
     </div>
-  </div>
-  <div class="kembali">
-    <a href="/">Kembali</a>
-  </div>
 </div>
 <script>
-  setTimeout(() => $('.kembali').fadeIn(3000), 3000);
-  setTimeout(() => location.replace('/'), 5000);
+setTimeout(() => $('.kembali').fadeIn(3000), 3000);
+setTimeout(() => location.replace('/'), 4000);
 </script>

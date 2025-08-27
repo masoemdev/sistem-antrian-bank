@@ -41,15 +41,15 @@ include 'total_antrian.php';
 <link rel="stylesheet" href="css/display.css">
 <span id="nama-page" class="nama-page">display</span>
 <div class="text-center">
-  <div class="sedang-dipanggil-header">SEDANG DIPANGGIL</div>
-  <div class="blok-displays bg-debugs">
-    <?= $displays ?>
-  </div>
-  <div class='total-antrian'>
-    <div class="hideit">
-      Total antrian hari ini: <span id=total_antrian><?= $total_antrian ?></span>
+    <div class="sedang-dipanggil-header">SEDANG DIPANGGIL</div>
+    <div class="blok-displays bg-debugs">
+        <?= $displays ?>
     </div>
-    <?php include 'marquee.php'; ?>
-  </div>
+    <div class='total-antrian'>
+        <div class="hideit">
+            Total antrian hari ini: <span id=total_antrian><?= $total_antrian ?></span>
+        </div>
+        <?php include 'marquee.php'; ?>
+    </div>
 </div>
 <script src="js/update_counts.js"></script>

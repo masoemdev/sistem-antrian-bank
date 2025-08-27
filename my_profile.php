@@ -1,26 +1,26 @@
 <style>
-  .my-profile {
+.my-profile {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 4;
     background: linear-gradient(#020, #002);
-  }
+}
 
-  .container-my-profile {
+.container-my-profile {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-  }
+}
 
-  .box-my-profile {
+.box-my-profile {
     max-width: 500px;
     margin: 10px;
     padding: 20px 15px;
     border-radius: 10px;
     background: linear-gradient(#efe, #ccf);
-  }
+}
 </style>
 <?php
 $error_ubah_password = null;
@@ -36,7 +36,6 @@ if (isset($_POST['btn_ubah_password'])) {
   } else {
     $sql_password_lama = '1';
   }
-
   if (!$error_ubah_password) {
     $s = "UPDATE tb_user SET password = md5('$_POST[password_baru]') WHERE username='$username' AND $sql_password_lama";
     $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
@@ -46,8 +45,6 @@ if (isset($_POST['btn_ubah_password'])) {
     jsurl();
   }
 }
-
-
 if ($user['password']) {
   $info_password = $error_ubah_password ? "<div class='alert alert-danger'>$error_ubah_password</div>" : '';
   $input_password_lama = "<input required type='password' name='password_lama' class='form-control mb-2' placeholder='Password Lama Anda' autocomplete=off minlength=3 maxlength=20>";
@@ -56,13 +53,11 @@ if ($user['password']) {
   $input_password_lama = '';
   echo '<style>.my-profile {display: block;}</style>';
 }
-
 echo "
   <div class='my-profile'>
     <div class=container-my-profile>
       <div class=box-my-profile>
         <h3 class='tengah mb-3'>My Profile</h3>
-
         <table class=table>
           <tr><td class='abu miring'>Username</td><td>$username</td></tr>
           <tr><td class='abu miring'>Role</td><td>$user[jenis_role]</td></tr>
@@ -73,8 +68,6 @@ echo "
             </td>
           </tr>
         </table>
-
-        
         <hr>
         <form method=post>
           <h3 class='tengah mb-3'>Ubah Password</h3>
@@ -93,23 +86,21 @@ echo "
 ?>
 <script src="js/editable.js"></script>
 <script>
-  $(function() {
+$(function() {
     $('.input-password').keyup(function() {
-      if ($('#password_baru').val() == $('#confirm_password').val()) {
-        $('#btn_ubah_password').prop('disabled', 0);
-      } else {
-        $('#btn_ubah_password').prop('disabled', 1);
-
-      }
+        if ($('#password_baru').val() == $('#confirm_password').val()) {
+            $('#btn_ubah_password').prop('disabled', 0);
+        } else {
+            $('#btn_ubah_password').prop('disabled', 1);
+        }
     });
-
     $('#btn_close').click(function() {
-      let username = $('#username').text();
-      $('.my-profile').slideUp();
-      $('.nama-user').text($('#tb_user--nama--username--' + username).text())
+        let username = $('#username').text();
+        $('.my-profile').slideUp();
+        $('.nama-user').text($('#tb_user--nama--username--' + username).text())
     });
     $('.nama-user').click(function() {
-      $('.my-profile').slideDown();
+        $('.my-profile').slideDown();
     });
-  })
+})
 </script>

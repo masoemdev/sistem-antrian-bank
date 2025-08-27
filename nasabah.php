@@ -1,7 +1,5 @@
 <?php
 $antrian = 32;
-
-
 $cols = '';
 $antrian = [];
 $jenis_antrian_aktif_count = 0;
@@ -65,7 +63,7 @@ foreach ($rjenis_antrian as $kode => $d) {
 
 ?>
 <style>
-  .nomor-antrian-label {
+.nomor-antrian-label {
     position: absolute;
     top: 10vh;
     left: 0;
@@ -73,45 +71,45 @@ foreach ($rjenis_antrian as $kode => $d) {
     font-size: 4rem;
     color: #007bff;
     padding: 2rem;
-  }
+}
 
-  .blok-nomor-antrian {
+.blok-nomor-antrian {
     position: absolute;
     top: 32vh;
     height: 50vh;
     left: 0;
     right: 0;
-  }
+}
 
-  .card-header {
+.card-header {
     font-size: 30px;
-  }
+}
 
-  .antrian-show {
+.antrian-show {
     font-size: 90px;
     height: 150px;
-  }
+}
 
-  .btn-ambil-antrian {
+.btn-ambil-antrian {
     font-size: 40px
-  }
+}
 
-  .btn-img-hand {
+.btn-img-hand {
     width: 40px;
-  }
+}
 
-  .bg-debug {
+.bg-debug {
     background: yellow !important;
-  }
+}
 </style>
 <div class="blok-nasabah text-center">
-  <img src="img/logo.png" alt="logo" class="logo" /> 
-<h1 class="nomor-antrian-label">Silahkan Ambil Antrian</h1>
-  <div class="blok-nomor-antrian">
-    <div class="px-4 h-80">
-      <div class="row h-80">
-        <?= $cols ?>
-      </div>
+    <img src="img/logo.png" alt="logo" class="logo" />
+    <h1 class="nomor-antrian-label">Silahkan Ambil Antrian</h1>
+    <div class="blok-nomor-antrian">
+        <div class="px-4 h-80">
+            <div class="row h-80">
+                <?= $cols ?>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
