@@ -77,7 +77,7 @@ $nomor_show = "$user[kode_role]$nomor_show";
 <div class="petugas ">
     <img src="img/logo.png" alt="logo" class="logo" />
     <div class="role-label">ANTRIAN <?= $user['jenis_role'] ?></div>
-    <div class="antrian-saat-ini">Antrian Saat Ini</div>
+    <div class="antrian-saat-ini">Nomor Antrian Saat Ini</div>
     <div class="antrian-saat-ini-nomor"><?= $nomor_show ?></div>
     <form method=post class="form-next-antrian">
         <div class="row">
