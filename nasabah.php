@@ -23,18 +23,19 @@ foreach ($rjenis_antrian as $kode => $d) {
     # ============================================================
     # AUTO INSERT ANTRIAN 1
     # ============================================================
-    $s = "INSERT INTO tb_antrian (
-      nomor,
-      kode_jenis
-    ) VALUES (
-      1,
-      '$kode'
-    )";
-    $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
+    // $s = "INSERT INTO tb_antrian (
+    //   nomor,
+    //   kode_jenis
+    // ) VALUES (
+    //   1,
+    //   '$kode'
+    // )";
+    // $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
 
-    $antrian['nomor'] = 1;
+    $antrian['nomor'] = 0;
   }
-  $antrian_show = sprintf('%03d', $antrian['nomor']);
+  // $antrian_show = sprintf('%03d', $antrian['nomor']);
+  $antrian_show = sprintf('%03d', $antrian['nomor'] + 1);
 
   $col_size = intval(12 / $jenis_antrian_aktif_count);
 

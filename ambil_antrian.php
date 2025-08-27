@@ -9,7 +9,9 @@ AND kode_jenis = '$kode_jenis'
 ";
 $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
 $d = mysqli_fetch_assoc($q);
-$nomor_baru = $d['nomor_baru'];
+$nomor_baru = $d['nomor_baru'] ?? 1;
+
+if (!$nomor_baru) stop("Nomor baru nol [$nomor_baru]");
 
 $s = "INSERT INTO tb_antrian (nomor,kode_jenis) VALUES ('$nomor_baru','$kode_jenis')";
 // echo '<pre>';

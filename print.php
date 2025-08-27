@@ -52,7 +52,12 @@ $s = "SELECT * FROM tb_antrian ORDER BY waktu DESC LIMIT 1";
 $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
 $last_antrian = mysqli_fetch_assoc($q);
 
-$last_antrian_show = $last_antrian['kode_jenis'] . sprintf('%03d', $last_antrian['nomor']);
+if ($last_antrian) {
+  $last_antrian_show = $last_antrian['kode_jenis'] . sprintf('%03d', $last_antrian['nomor']);
+} else {
+  $last_antrian_show = '000';
+  $last_antrian['kode_jenis'] = '-';
+}
 
 
 # ============================================================
@@ -90,22 +95,25 @@ JOIN tb_jenis_antrian b ON a.kode_jenis=b.kode
 WHERE a.waktu >= '$today' 
 AND a.kode_jenis = '$last_antrian[kode_jenis]'
 AND a.status is null -- barusan di klik oleh nasabah
-ORDER BY a.waktu DESC LIMIT 2 ";
+ORDER BY a.waktu DESC LIMIT 1 -- logic baru, hanya 1 baris yang diambil";
 $q = mysqli_query($cn, $s) or die(mysqli_error($cn));
 $num_rows = mysqli_num_rows($q);
 $baris1 = true;
+$firstLoad = 1;
 if ($num_rows) {
+  $firstLoad = 0;
   while ($antrian_print = mysqli_fetch_assoc($q)) {
-    if ($baris1 and $num_rows > 1) {
-      $baris1 = false;
-      continue; // abaikan baris 1  jika ada 2 rows
-    }
+    // if ($baris1 and $num_rows > 1) {
+    //   $baris1 = false;
+    //   continue; // abaikan baris 1  jika ada 2 rows
+    // }
 
     // hanya ambil row ke-2
     $antrian_print_show = $last_antrian['kode_jenis'] . sprintf('%03d', $antrian_print['nomor']);
   }
 } else {
-  die('Data Antrian Print tidak ada');
+  $antrian_print_show = '0000';
+  // die('Data Antrian Print tidak ada');
 }
 
 ?>
@@ -122,14 +130,16 @@ if ($num_rows) {
   </div>
 </div>
 
-<script>
-  window.onload = () => {
-    // Tunggu sebentar untuk pastikan halaman benar-benar siap
-    setTimeout(() => {
-      window.print();
-    }, 500); // 0.5 detik delay supaya teks termuat dulu
-  };
-</script>
+<?php if (!$firstLoad) { ?>
+  <script>
+    window.onload = () => {
+      // Tunggu sebentar untuk pastikan halaman benar-benar siap
+      setTimeout(() => {
+        window.print();
+      }, 500); // 0.5 detik delay supaya teks termuat dulu
+    };
+  </script>
+<?php } ?>
 
 <?php if ($is_live) { ?>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
