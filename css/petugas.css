@@ -15,7 +15,7 @@
   top: 5vh;
   left: 35vw;
   right: 35vw;
-  font-size: 25px;
+  font-size: 35px;
   text-align: center;
   background: #eef;
   border-radius: 10px;
@@ -98,7 +98,7 @@
     height: 27vh;
   }
 
-  .btn-info{
+  .btn-info {
     margin: 10px 0;
     color: gray;
   }
